@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stagelog-shared-contracts"
+version = "0.2.0"
+description = "Shared contracts and runtime helpers for stagelog services"
+requires-python = ">=3.11"
+dependencies = [
+    "Django>=5.2",
+    "requests>=2.31",
+]
+
+[tool.setuptools.packages.find]
+include = ["contracts*", "stagelog_shared*"]
