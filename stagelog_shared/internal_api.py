@@ -119,9 +119,9 @@ def get_favorite_counts(event_ids: Iterable[int]) -> Dict[int, int]:
     if not _enabled():
         raise InternalApiError("internal api disabled")
 
-    base = getattr(settings, "POSTS_INTERNAL_BASE_URL", "").rstrip("/")
+    base = getattr(settings, "AUTH_INTERNAL_BASE_URL", "").rstrip("/")
     if not base:
-        raise InternalApiError("POSTS_INTERNAL_BASE_URL is empty")
+        raise InternalApiError("AUTH_INTERNAL_BASE_URL is empty")
 
     ids = sorted({int(eid) for eid in event_ids if eid is not None})
     if not ids:
